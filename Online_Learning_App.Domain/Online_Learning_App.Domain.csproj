@@ -10,8 +10,11 @@
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.2" />
   </ItemGroup>
 
+<<<<<<< HEAD
   <ItemGroup>
     <Folder Include="Models\" />
   </ItemGroup>
 
+=======
+>>>>>>> a0811f2 (Add project files.)
 </Project>

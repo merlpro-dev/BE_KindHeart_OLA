@@ -1,4 +1,12 @@
+<<<<<<< HEAD
 ﻿using System.Threading.Tasks;
+=======
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+>>>>>>> a0811f2 (Add project files.)
 using Microsoft.AspNetCore.Identity;
 using Online_Learning_App.Domain.Entities;
 using Online_Learning_App.Domain.Interfaces;
@@ -23,6 +31,7 @@ namespace Online_Learning_App.Infrastructure
         {
             return await _userManager.CheckPasswordAsync(user, password);
         }
+<<<<<<< HEAD
 
         public async Task<ApplicationUser> GetByIdAsync(string id)
         {
@@ -38,5 +47,7 @@ namespace Online_Learning_App.Infrastructure
         {
             await _userManager.DeleteAsync(user);
         }
+=======
+>>>>>>> a0811f2 (Add project files.)
     }
 }

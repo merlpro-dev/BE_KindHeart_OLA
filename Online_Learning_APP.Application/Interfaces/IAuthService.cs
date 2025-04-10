@@ -9,7 +9,11 @@ namespace Online_Learning_APP.Application.Interfaces
 {
     public interface IAuthService
     {
+<<<<<<< HEAD
         //Task<bool> AuthenticateUserAsync(LoginDTO loginDto);
         Task<(bool IsAuthenticated, string? Role)> AuthenticateUserAsync(LoginDTO loginDto);
+=======
+        Task<bool> AuthenticateUserAsync(LoginDTO loginDto);
+>>>>>>> a0811f2 (Add project files.)
     }
 }

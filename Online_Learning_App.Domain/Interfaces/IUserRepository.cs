@@ -9,6 +9,7 @@ namespace Online_Learning_App.Domain.Interfaces
 {
     public interface IUserRepository
     {
+<<<<<<< HEAD
         //Task DeleteAsync(object existingUser);
         //Task GetByIdAsync(string id);
         //Task<ApplicationUser> GetUserByUsernameAsync(string username);
@@ -22,5 +23,9 @@ namespace Online_Learning_App.Domain.Interfaces
        Task<bool> ValidatePasswordAsync(ApplicationUser user, string password);
         
 
+=======
+        Task<ApplicationUser> GetUserByUsernameAsync(string username);
+        Task<bool> ValidatePasswordAsync(ApplicationUser user, string password);
+>>>>>>> a0811f2 (Add project files.)
     }
 }

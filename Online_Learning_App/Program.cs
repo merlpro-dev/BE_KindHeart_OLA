@@ -3,9 +3,12 @@ using Application.Services;
 //using Domain.Interfaces;
 //using Infrastructure.Data;
 //using Infrastructure.Repositories;
+<<<<<<< HEAD
 using AutoMapper;
 
 
+=======
+>>>>>>> a0811f2 (Add project files.)
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -14,6 +17,7 @@ using Online_Learning_App.Domain.Entities;
 using Online_Learning_App.Domain.Interfaces;
 using Online_Learning_App.Infrastructure;
 using Microsoft.EntityFrameworkCore;
+<<<<<<< HEAD
 using Online_Learning_APP.Application.Services;
 using AuthenticationApp.Application.Services;
 using Online_Learning_App.Infrastructure.Repository;
@@ -26,10 +30,13 @@ using Online_Learning_App.Domain.Interfaces;
 using Online_Learning_APP.Infrastructure.Services;
 using Online_Learning_App.Infrastructure.Services;
 
+=======
+>>>>>>> a0811f2 (Add project files.)
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Configure database
+<<<<<<< HEAD
 //builder.Services.AddDbContext<ApplicationDbContext>(options =>
 //    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
@@ -44,6 +51,13 @@ builder.Services.AddIdentity<ApplicationUser, Role>(
         options.ClaimsIdentity.RoleClaimType = null;
     }
     )
+=======
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+// Identity setup
+builder.Services.AddIdentity<ApplicationUser, Role>()
+>>>>>>> a0811f2 (Add project files.)
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddDefaultTokenProviders();
 
@@ -54,6 +68,7 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.Cookie.HttpOnly = true;
     options.ExpireTimeSpan = TimeSpan.FromMinutes(30);
 });
+<<<<<<< HEAD
 var mapperConfig = new MapperConfiguration(cfg =>
 {
     cfg.AddProfile<MappingProfile>();
@@ -131,5 +146,21 @@ app.UseEndpoints(endpoints =>
     endpoints.MapControllers();
 });
 
+=======
+
+// Register services
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddHttpContextAccessor();
+
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+var app = builder.Build();
+
+app.UseAuthentication();
+app.UseAuthorization();
+>>>>>>> a0811f2 (Add project files.)
 app.MapControllers();
 app.Run();

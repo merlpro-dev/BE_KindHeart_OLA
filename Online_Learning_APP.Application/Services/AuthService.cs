@@ -21,13 +21,19 @@ namespace Application.Services
         private readonly IUserRepository _userRepository;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly IHttpContextAccessor _httpContextAccessor;
+<<<<<<< HEAD
         private readonly UserManager<ApplicationUser> _userManager;
 
         public AuthService(IUserRepository userRepository, SignInManager<ApplicationUser> signInManager, IHttpContextAccessor httpContextAccessor, UserManager<ApplicationUser> userManager)
+=======
+
+        public AuthService(IUserRepository userRepository, SignInManager<ApplicationUser> signInManager, IHttpContextAccessor httpContextAccessor)
+>>>>>>> a0811f2 (Add project files.)
         {
             _userRepository = userRepository;
             _signInManager = signInManager;
             _httpContextAccessor = httpContextAccessor;
+<<<<<<< HEAD
             _userManager = userManager;
         }
 
@@ -69,4 +75,17 @@ namespace Application.Services
     }
 
 
+=======
+        }
+
+        public async Task<bool> AuthenticateUserAsync(LoginDTO loginDto)
+        {
+            var user = await _userRepository.GetUserByUsernameAsync(loginDto.UserName);
+            if (user == null) return false;
+
+            var result = await _signInManager.PasswordSignInAsync(user, loginDto.Password, loginDto.RememberMe, false);
+            return result.Succeeded;
+        }
+    }
+>>>>>>> a0811f2 (Add project files.)
 }

@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+<<<<<<< HEAD
     <PackageReference Include="AutoMapper" Version="14.0.0" />
     <PackageReference Include="Google.Apis.Auth" Version="1.69.0" />
     <PackageReference Include="Google.Apis.Drive.v3" Version="1.69.0.3703" />
@@ -25,6 +26,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Online_Learning_APP.Application\Online_Learning_APP.Application.csproj" />
+=======
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+>>>>>>> a0811f2 (Add project files.)
     <ProjectReference Include="..\Online_Learning_App.Domain\Online_Learning_App.Domain.csproj" />
   </ItemGroup>
 
